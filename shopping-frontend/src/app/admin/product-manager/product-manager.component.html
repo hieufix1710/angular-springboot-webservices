@@ -1,0 +1,75 @@
+<!-- DASHBOARD CONTENT -->
+<div class="dashboard-content">
+  <!-- HEADLINE -->
+  <div class="headline filter primary">
+    <h4>Manage Items ({{products.length }})</h4>
+    <form class="search-form" style="margin-left: 3rem">
+      <input type="text" class="rounded" name="search" [(ngModel)]="searchValue" (ngModelChange)="search()" id="search_products"  placeholder="Search products here...">
+<!--      <input type="image" src="assets/images/search-icon.png"  (click)="search()"  alt="search-icon">-->
+    </form>
+    <button style="margin-top: 20px; border: 1px solid black; border-radius: 10px; font-size: 20px; font-weight: bold;">
+      <a routerLink="/upload-product" style="font-size: 15px">Add product</a>
+    </button>
+    <form>
+      <label for="price_filter" class="select-block">
+        <select name="price_filter" id="price_filter" [(ngModel)]="priceFlow" (ngModelChange)="searcPrice()">
+          <option value="0">Price (High to Low)</option>
+          <option value="1">Price (Low to High)</option>
+        </select>
+        <!-- SVG ARROW -->
+        <svg class="svg-arrow">
+          <use xlink:href="#svg-arrow"></use>
+        </svg>
+        <!-- /SVG ARROW -->
+      </label>
+    </form>
+  </div>
+  <!-- /HEADLINE -->
+
+  <!-- PRODUCT LIST -->
+  <div class="product-list grid column4-wrap">
+
+
+  </div>
+  <div>
+    <form>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Price</th>
+          <th>Type</th>
+          <th>Author</th>
+        </tr>
+        <tr *ngFor="let product of products">
+          <td>{{product.id}}</td>
+          <td>{{product.name}}</td>
+          <td>
+            <img src="{{product.url}}" style="width: 3rem; height: auto">
+          </td>
+          <td>{{product.price}}</td>
+          <td>{{product.typeProduct.name}}</td>
+          <td>{{product.user.name}}</td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <!-- /PRODUCT LIST -->
+
+
+  <div class="clearfix"></div>
+
+  <!-- PAGER -->
+  <div class="pager tertiary" style="display: flex; flex-direction: row; justify-content: center">
+    <div class="pager-item" (click)="prePage()"><p> < </p></div>
+    <div class="pager-item active"><p>{{currentPage}}</p></div>
+    <div class="pager-item" (click)="nextPage()"><p> > </p></div>
+    <div class="pager-item"><p>...</p></div>
+    <div class="pager-item"><p>{{totalPage}}</p></div>
+  </div>
+  <!-- /PAGER -->
+</div>
+<!-- DASHBOARD CONTENT -->
+
+

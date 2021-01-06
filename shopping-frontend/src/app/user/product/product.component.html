@@ -1,0 +1,518 @@
+<!-- SECTION HEADLINE -->
+<div class="section-headline-wrap v2" >
+  <div class="section-headline">
+    <h2>Products</h2>
+    <p>Home<span class="separator">/</span><span class="current-section">Products</span></p>
+  </div>
+</div>
+<!-- /SECTION HEADLINE -->
+<!-- SIDEBAR NAV -->
+<div class="sidebar-nav-wrap">
+  <div class="sidebar-nav">
+    <!-- SIDEBAR MENU -->
+    <ul class="sidebar-menu">
+      <!-- SIDEBAR MENU ITEM -->
+      <li class="sidebar-menu-item">
+        <!-- SVG ARROW -->
+        <!--        <svg class="svg-arrow">-->
+        <!--          <use xlink:href="#svg-arrow"></use>-->
+        <!--        </svg>-->
+        <!-- /SVG ARROW -->
+        <a href="" >Filter Products : </a>
+
+        <!-- SIDEBAR MENU DROPDOWN -->
+        <!--        <div class="sidebar-menu-dropdown">-->
+        <!--          <form id="shop_search_form" name="shop_search_form">-->
+        <!--            &lt;!&ndash; CHECKBOX &ndash;&gt;-->
+        <!--            <input type="checkbox" id="filter1" name="filter1" checked>-->
+        <!--            <label for="filter1">-->
+        <!--              <span class="checkbox primary"><span></span></span>-->
+        <!--              Cartoon Characters-->
+        <!--              <span class="quantity">350</span>-->
+        <!--            </label>-->
+        <!--            &lt;!&ndash; /CHECKBOX &ndash;&gt;-->
+
+        <!--            &lt;!&ndash; CHECKBOX &ndash;&gt;-->
+        <!--            <input type="checkbox" id="filter2" name="filter2" checked>-->
+        <!--            <label for="filter2">-->
+        <!--              <span class="checkbox primary"><span></span></span>-->
+        <!--              Flat Vector-->
+        <!--              <span class="quantity">68</span>-->
+        <!--            </label>-->
+        <!--            &lt;!&ndash; /CHECKBOX &ndash;&gt;-->
+
+        <!--            &lt;!&ndash; CHECKBOX &ndash;&gt;-->
+        <!--            <input type="checkbox" id="filter3" name="filter3" checked>-->
+        <!--            <label for="filter3">-->
+        <!--              <span class="checkbox primary"><span></span></span>-->
+        <!--              People-->
+        <!--              <span class="quantity">350</span>-->
+        <!--            </label>-->
+        <!--            &lt;!&ndash; /CHECKBOX &ndash;&gt;-->
+
+        <!--            &lt;!&ndash; CHECKBOX &ndash;&gt;-->
+        <!--            <input type="checkbox" id="filter4" name="filter4">-->
+        <!--            <label for="filter4">-->
+        <!--              <span class="checkbox primary"><span></span></span>-->
+        <!--              Animals-->
+        <!--              <span class="quantity">68</span>-->
+        <!--            </label>-->
+        <!--            &lt;!&ndash; /CHECKBOX &ndash;&gt;-->
+
+        <!--            &lt;!&ndash; CHECKBOX &ndash;&gt;-->
+        <!--            <input type="checkbox" id="filter5" name="filter5">-->
+        <!--            <label for="filter5">-->
+        <!--              <span class="checkbox primary"><span></span></span>-->
+        <!--              Objects-->
+        <!--              <span class="quantity">350</span>-->
+        <!--            </label>-->
+        <!--            &lt;!&ndash; /CHECKBOX &ndash;&gt;-->
+
+        <!--            &lt;!&ndash; CHECKBOX &ndash;&gt;-->
+        <!--            <input type="checkbox" id="filter6" name="filter6" checked>-->
+        <!--            <label for="filter6">-->
+        <!--              <span class="checkbox primary"><span></span></span>-->
+        <!--              Backgrounds-->
+        <!--              <span class="quantity">68</span>-->
+        <!--            </label>-->
+        <!--            &lt;!&ndash; /CHECKBOX &ndash;&gt;-->
+        <!--          </form>-->
+        <!--        </div>-->
+        <!-- /SIDEBAR MENU DROPDOWN -->
+      </li>
+      <!-- /SIDEBAR MENU ITEM -->
+
+
+
+      <!-- SIDEBAR MENU ITEM -->
+      <li class="sidebar-menu-item">
+        <!-- SVG ARROW -->
+        <svg class="svg-arrow">
+          <use xlink:href="#svg-arrow"></use>
+        </svg>
+        <!-- /SVG ARROW -->
+        <a href="#">File Type</a>
+        <!-- SIDEBAR MENU DROPDOWN -->
+        <div class="sidebar-menu-dropdown">
+          <!-- CHECKBOX -->
+          <!--          <input type="checkbox" id="ft1" name="ft1">-->
+          <label  *ngFor="let type of typeProducts" (click)="changeFilterTypeProduct(type.id)">
+            <span class="primary" ><span></span></span>
+            {{type.name}}
+            <span class="quantity"></span>
+          </label>
+          <!-- /CHECKBOX -->
+
+          <!-- CHECKBOX -->
+          <!--          <input type="checkbox" id="ft2" name="ft2" checked>-->
+          <!--          <label (click)="changeFilterTypeProduct(2)">-->
+          <!--            <span class=" primary"><span></span></span>-->
+          <!--            Illustrator AI-->
+          <!--            <span class="quantity">254</span>-->
+          <!--          </label >-->
+          <!-- /CHECKBOX -->
+
+          <!-- CHECKBOX -->
+          <!--          <input type="checkbox" id="ft3" name="ft3"  checked>-->
+          <!--          <label (click)="changeFilterTypeProduct(3)" >-->
+          <!--            <span class=" primary"><span></span></span>-->
+          <!--            EPS-->
+          <!--            <span class="quantity">138</span>-->
+          <!--          </label>-->
+          <!-- /CHECKBOX -->
+
+          <!-- CHECKBOX -->
+          <!--          <input type="checkbox" id="ft4" name="ft4"  checked>-->
+          <!--          <label (click)="changeFilterTypeProduct(4)" >-->
+          <!--            <span class=" primary"><span></span></span>-->
+          <!--            SVG-->
+          <!--            <span class="quantity">96</span>-->
+          <!--          </label>-->
+          <!-- /CHECKBOX -->
+
+          <!-- CHECKBOX -->
+          <!--          <input type="checkbox" id="ft5" name="ft5" >-->
+          <!--          <label (click)="changeFilterTypeProduct(5)" >-->
+          <!--            <span class=" primary"><span></span></span>-->
+          <!--            InDesign INDD-->
+          <!--            <span class="quantity">102</span>-->
+          <!--          </label>-->
+          <!-- /CHECKBOX -->
+        </div>
+        <!-- /SIDEBAR MENU DROPDOWN -->
+      </li>
+      <!-- /SIDEBAR MENU ITEM -->
+
+      <!-- SIDEBAR MENU ITEM -->
+      <li class="sidebar-menu-item">
+        <!-- SVG ARROW -->
+        <svg class="svg-arrow">
+          <use xlink:href="#svg-arrow"></use>
+        </svg>
+      </li>
+      <!-- /SIDEBAR MENU ITEM -->
+
+
+      <li class="sidebar-menu-item" style="margin-top: 10px">
+        <form class="search-form">
+          <input type="text" class="rounded" name="search" [(ngModel)]="searchValue" id="search_products"  placeholder="Search products here...">
+          <input type="image" src="assets/images/search-icon.png"  (click)="search()"  alt="search-icon">
+        </form>
+      </li>
+
+    </ul>
+    <!-- /SIDEBAR MENU -->
+
+
+    <!-- SIDEBAR FILTERS -->
+    <div class="sidebar-filters">
+      <form id="shop_filter_form" name="shop_filter_form">
+
+        <label for="price_filter" class="select-block">
+          <select name="price_filter" id="price_filter" [(ngModel)]="priceFlow" (ngModelChange)="changePriceFlow()">
+            <option value="0">Price (High to Low)</option>
+            <option value="1">Price (Low to High)</option>
+          </select>
+          <!-- SVG ARROW -->
+          <svg class="svg-arrow">
+            <use xlink:href="#svg-arrow"></use>
+          </svg>
+          <!-- /SVG ARROW -->
+        </label>
+        <label for="itemspp_filter" class="select-block">
+          <select name="itemspp_filter" id="itemspp_filter" [(ngModel)]="pageSize" (ngModelChange)="changePriceFlow()">
+            <option value="12" >12 Items Per Page</option>
+            <option value="8">8 Items Per Page</option>
+            <option value="4">4 Items Per Page</option>
+          </select>
+          <!-- SVG ARROW -->
+          <svg class="svg-arrow">
+            <use xlink:href="#svg-arrow"></use>
+          </svg>
+          <!-- /SVG ARROW -->
+        </label>
+      </form>
+
+      <!-- VIEW SELECTORS -->
+      <div class="view-selectors">
+        <a (click)="changeStyleShow(1)"  class="view-selector grid active"></a>
+        <a (click)="changeStyleShow(2)" class="view-selector list"></a>
+      </div>
+      <!-- /VIEW SELECTORS -->
+
+    </div>
+    <!-- /SIDEBAR FILTERS -->
+  </div>
+</div>
+<!-- /SIDEBAR NAV -->
+
+
+
+<!-- SECTION -->
+<div class="section-wrap" *ngIf="style==1">
+  <div class="section">
+    <!-- PRODUCT SHOWCASE -->
+    <div class="product-showcase">
+      <!-- PRODUCT LIST -->
+      <div class="product-list grid column4-wrap">
+        <!-- PRODUCT ITEM -->
+        <div class="product-item column" *ngFor="let product of products">
+          <!-- PRODUCT PREVIEW ACTIONS -->
+          <div class="product-preview-actions">
+            <!-- PRODUCT PREVIEW IMAGE -->
+            <figure class="product-preview-image" style="overflow: hidden!important;">
+              <img src="{{product.url}}"
+                   alt="product-image">
+            </figure>
+            <!-- /PRODUCT PREVIEW IMAGE -->
+
+            <!-- PREVIEW ACTIONS -->
+            <div class="preview-actions">
+              <!-- PREVIEW ACTION -->
+              <!--              <div class="preview-action">-->
+              <!--                <a href="item-v1.html">-->
+              <!--                  <div class="circle tiny primary">-->
+              <!--                    <span class="icon-tag"></span>-->
+              <!--                  </div>-->
+              <!--                </a>-->
+              <!--                <a href="item-v1.html">-->
+              <!--                  <p>Go to Item</p>-->
+              <!--                </a>-->
+              <!--              </div>-->
+              <!-- /PREVIEW ACTION -->
+              <!-- PREVIEW ACTION -->
+              <div class="preview-action"  (click)="addToCart(product.id)" title="Add to your cart">
+                <a href="javascript: void(0)">
+                  <div class="circle tiny secondary">
+                    <span class="icon-basket" style="margin-left: 10px"></span>
+                  </div>
+                </a>
+                <a href="#">
+                  <p>Your Cart +</p>
+                </a>
+              </div>
+              <!-- /PREVIEW ACTION -->
+            </div>
+            <!-- /PREVIEW ACTIONS -->
+          </div>
+          <!-- /PRODUCT PREVIEW ACTIONS -->
+
+          <!-- PRODUCT INFO -->
+          <div class="product-info" style="z-index: 1">
+            <a href="item-v1.html">
+              <p class="text-header">{{product.name}}</p>
+            </a>
+            <p class="product-description">Lorem ipsum dolor sit urarde...</p>
+            <a href="shop-gridview-v1.html">
+              <p class="category primary">{{product.typeProduct.name}}</p>
+            </a>
+            <p class="price"><span>$</span>{{product.price}}</p>
+          </div>
+          <!-- /PRODUCT INFO -->
+          <hr class="line-separator">
+
+          <!-- USER RATING -->
+          <div class="user-rating">
+            <a href="author-profile.html">
+              <figure class="user-avatar small">
+                <img src="{{product.user.avatar}}" alt="user-avatar">
+              </figure>
+            </a>
+            <a href="author-profile.html">
+              <p class="text-header tiny">{{product.user.name}}</p>
+            </a>
+            <ul class="rating tooltip" title="Author's Reputation">
+              <li class="rating-item">
+                <!-- SVG STAR -->
+                <svg class="svg-star">
+                  <use xlink:href="#svg-star"></use>
+                </svg>
+                <!-- /SVG STAR -->
+              </li>
+              <li class="rating-item">
+                <!-- SVG STAR -->
+                <svg class="svg-star">
+                  <use xlink:href="#svg-star"></use>
+                </svg>
+                <!-- /SVG STAR -->
+              </li>
+              <li class="rating-item">
+                <!-- SVG STAR -->
+                <svg class="svg-star">
+                  <use xlink:href="#svg-star"></use>
+                </svg>
+                <!-- /SVG STAR -->
+              </li>
+              <li class="rating-item">
+                <!-- SVG STAR -->
+                <svg class="svg-star">
+                  <use xlink:href="#svg-star"></use>
+                </svg>
+                <!-- /SVG STAR -->
+              </li>
+              <li class="rating-item empty">
+                <!-- SVG STAR -->
+                <svg class="svg-star">
+                  <use xlink:href="#svg-star"></use>
+                </svg>
+                <!-- /SVG STAR -->
+              </li>
+            </ul>
+          </div>
+          <!-- /USER RATING -->
+        </div>
+        <!-- /PRODUCT ITEM -->
+
+
+      </div>
+      <!-- /PRODUCT LIST -->
+    </div>
+    <!-- /PRODUCT SHOWCASE -->
+
+    <div class="clearfix"></div>
+    <p *ngIf="products.length===0"style="display: flex;justify-content: center">Not result found !</p>
+    <!-- PAGER -->
+    <div class="pager primary" style="" *ngIf="products.length!==0">
+      <div class="pager-item" (click)="prePage()"><p> < </p></div>
+      <div class="pager-item active"><p>{{currentPage}}</p></div>
+      <div class="pager-item"><p> ... </p></div>
+      <div class="pager-item"><p> {{totalPage}} </p></div>
+      <div class="pager-item" (click)="nextPage()"><p> > </p></div>
+    </div>
+    <!-- /PAGER -->
+  </div>
+</div>
+<!-- /SECTION -->
+
+<!-- SECTION -->
+<div class="section-wrap" *ngIf="style==2">
+  <div class="section overflowable">
+    <!-- PRODUCT SHOWCASE -->
+    <div class="product-showcase">
+      <!-- PRODUCT LIST -->
+      <div class="product-list list full">
+        <!-- PRODUCT ITEM -->
+        <div class="product-item" *ngFor="let product of products">
+          <a href="item-v1.html">
+            <!-- PRODUCT PREVIEW IMAGE -->
+            <figure class="product-preview-image small">
+              <img src="{{product.url}}" alt="product-image">
+            </figure>
+            <!-- /PRODUCT PREVIEW IMAGE -->
+          </a>
+
+          <!-- PRODUCT INFO -->
+          <div class="product-info">
+            <a href="item-v1.html">
+              <p class="text-header">{{product.name}}</p>
+            </a>
+            <p class="product-description">Lorem ipsum dolor sit urarde...</p>
+            <a href="shop-gridview-v1.html">
+              <p class="category primary">{{product.typeProduct.name}}</p>
+            </a>
+          </div>
+          <!-- /PRODUCT INFO -->
+
+          <!-- AUTHOR DATA -->
+          <div class="author-data">
+            <!-- USER RATING -->
+            <div class="user-rating">
+              <a href="author-profile.html">
+                <figure class="user-avatar small">
+                  <img src="{{product.user.avatar}}" alt="user-avatar">
+                </figure>
+              </a>
+              <a href="author-profile.html">
+                <p class="text-header tiny">{{product.user.name}}</p>
+              </a>
+            </div>
+            <!-- /USER RATING -->
+
+            <!-- METADATA -->
+            <div class="metadata">
+              <!-- META ITEM -->
+              <div class="meta-item">
+                <span class="icon-bubble"></span>
+                <p>12</p>
+              </div>
+              <!-- /META ITEM -->
+
+              <!-- META ITEM -->
+              <div class="meta-item">
+                <span class="icon-eye"></span>
+                <p>210</p>
+              </div>
+              <!-- /META ITEM -->
+
+              <!-- META ITEM -->
+              <div class="meta-item">
+                <span class="icon-heart"></span>
+                <p>105</p>
+              </div>
+              <!-- /META ITEM -->
+            </div>
+            <!-- /METADATA -->
+          </div>
+          <!-- /AUTHOR DATA -->
+
+          <!-- ITEM METADATA -->
+          <div class="item-metadata">
+            <p class="text-header tiny">Files Included: <span>Psd, Ai, Jpeg, Png</span></p>
+            <p class="text-header tiny">Dimensions: <span>4x6 Inches (with 0,25 bleed)</span></p>
+            <p class="text-header tiny">
+              Tags:
+              <span>
+									<a href="#">custom</a>,
+									<a href="#">clothing</a>,
+									<a href="#">monsters</a>,
+									<a href="#">photoshop</a>, ...
+								</span>
+            </p>
+          </div>
+          <!-- ITEM METADATA -->
+
+          <!-- AUTHOR DATA REPUTATION -->
+          <div class="author-data-reputation">
+            <p class="text-header tiny">Reputation</p>
+            <ul class="rating">
+              <li class="rating-item">
+                <!-- SVG STAR -->
+                <svg class="svg-star">
+                  <use xlink:href="#svg-star"></use>
+                </svg>
+                <!-- /SVG STAR -->
+              </li>
+              <li class="rating-item">
+                <!-- SVG STAR -->
+                <svg class="svg-star">
+                  <use xlink:href="#svg-star"></use>
+                </svg>
+                <!-- /SVG STAR -->
+              </li>
+              <li class="rating-item">
+                <!-- SVG STAR -->
+                <svg class="svg-star">
+                  <use xlink:href="#svg-star"></use>
+                </svg>
+                <!-- /SVG STAR -->
+              </li>
+              <li class="rating-item">
+                <!-- SVG STAR -->
+                <svg class="svg-star">
+                  <use xlink:href="#svg-star"></use>
+                </svg>
+                <!-- /SVG STAR -->
+              </li>
+              <li class="rating-item empty">
+                <!-- SVG STAR -->
+                <svg class="svg-star">
+                  <use xlink:href="#svg-star"></use>
+                </svg>
+                <!-- /SVG STAR -->
+              </li>
+            </ul>
+          </div>
+          <!-- /AUTHOR DATA REPUTATION -->
+
+          <!-- ITEM ACTIONS -->
+          <div class="item-actions">
+            <a href="#" class="tooltip" title="Add to your cart">
+              <div class="circle tiny">
+                <span class="icon-basket-loaded" style="margin-left: 10px"></span>
+              </div>
+            </a>
+          </div>
+          <!-- /ITEM ACTIONS -->
+
+          <!-- PRICE INFO -->
+          <div class="price-info">
+            <p class="price medium"><span>$</span>{{product.price}}</p>
+          </div>
+          <!-- /PRICE INFO -->
+        </div>
+        <!-- /PRODUCT ITEM -->
+
+
+      </div>
+      <!-- /PRODUCT LIST -->
+    </div>
+    <!-- /PRODUCT SHOWCASE -->
+    <p *ngIf="products.length===0"style="display: flex;justify-content: center">Not result found !</p>
+
+    <!-- PAGER -->
+    <!-- PAGER -->
+    <div class="pager primary" *ngIf="products.length!==0">
+      <div class="pager-item" (click)="prePage()"><p> < </p></div>
+      <div class="pager-item active"><p>{{currentPage}}</p></div>
+      <div class="pager-item"><p> ... </p></div>
+      <div class="pager-item"><p> {{totalPage}} </p></div>
+      <div class="pager-item" (click)="nextPage()"><p> > </p></div>
+    </div>
+    <!-- /PAGER -->
+    <!-- /PAGER -->
+  </div>
+</div>
+<!-- /SECTION -->
+
+
+

@@ -1,0 +1,48 @@
+import {Inject, Injectable} from '@angular/core';
+import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
+import {Data} from '@angular/router';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UploadFirebaseService {
+  imageDetailList: AngularFireList<any>;
+  fileList: any[];
+  dataSet: Data = {
+    id: '',
+    url: '',
+  };
+  msg = 'error';
+
+  constructor(@Inject(AngularFireDatabase) private firebase: AngularFireDatabase) {
+  }
+  getImageDetail(){
+    this.imageDetailList = this.firebase.list('imageDetails');
+  }
+
+  insertImage(id, url){
+      this.dataSet = {
+        id,
+        url
+      };
+      this.imageDetailList.push(this.dataSet);
+  }
+  getImage(value){
+    this.imageDetailList.snapshotChanges().subscribe(
+      (list) => {
+        this.fileList = list.map(item => {
+          return item.payload.val();
+        })
+        this.fileList.forEach(element => {
+          if (element.id === value){
+            this.msg = element.url
+          }
+          if (this.msg==='error'){
+            
+          }
+        })
+      }
+    )
+  }
+
+}

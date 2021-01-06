@@ -1,0 +1,59 @@
+
+<!-- SECTION HEADLINE -->
+<div class="section-headline-wrap">
+  <div class="section-headline">
+    <h2>Login</h2>
+<!--    <p>Home<span class="separator">/</span><span class="current-section">Boxes</span></p>-->
+  </div>
+</div>
+<!-- /SECTION HEADLINE -->
+
+<!-- SECTION -->
+<div class="section-wrap">
+  <div class="section ">
+    <!-- FORM POPUP -->
+    <div class="form-popup">
+
+    </div>
+    <!-- /FORM POPUP -->
+
+    <!-- FORM POPUP -->
+    <div class="form-popup">
+      <!-- FORM POPUP CONTENT -->
+      <div class="form-popup-content">
+        <h4 class="popup-title">Login to your Account</h4>
+        <!-- LINE SEPARATOR -->
+        <hr class="line-separator">
+        <!-- /LINE SEPARATOR -->
+        <form id="login-form" [formGroup]="loginForm">
+          <label for="username" class="rl-label">Username</label>
+          <input type="text" id="username" formControlName="username" name="username" placeholder="Enter your username here...">
+          <label for="password" class="rl-label">Password</label>
+          <input type="password" id="password" formControlName="password" name="password" placeholder="Enter your password here...">
+          <!-- CHECKBOX -->
+          <input type="checkbox" id="remember" name="remember" checked>
+          <label for="remember" class="label-check">
+            <span class="checkbox primary primary"><span></span></span>
+            Remember username and password
+          </label>
+          <!-- /CHECKBOX -->
+          <p>Forgot your password? <a href="#" class="primary">Click here!</a></p>
+          <button class="button mid dark" (click)="submitLogin()">Login <span class="primary">Now!</span></button>
+        </form>
+        <!-- LINE SEPARATOR -->
+        <hr class="line-separator double">
+        <!-- /LINE SEPARATOR -->
+        <a href="#" class="button mid fb half">Login with Facebook</a>
+        <a href="#" class="button mid twt half">Login with Twitter</a>
+      </div>
+      <!-- /FORM POPUP CONTENT -->
+
+    </div>
+    <!-- /FORM POPUP -->
+
+
+    <div class="clearfix"></div>
+  </div>
+</div>
+<!-- /SECTION -->
+

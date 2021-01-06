@@ -1,0 +1,23 @@
+<!-- BANNER -->
+<div class="banner-wrap">
+  <section class="banner banner-v2">
+    <h5>Register now and start</h5>
+    <h1><span>Buying and Selling</span></h1>
+    <form class="search-widget-form" >
+      <input type="text" name="category_name" placeholder="Search goods or services here...">
+      <label for="categories" class="select-block">
+        <select name="categories" id="categories">
+          <option value="0">All Categories</option>
+          <option *ngFor="let type of typeProducts" value="{{type.id}}">{{type.name}}</option>
+        </select>
+        <!-- SVG ARROW -->
+        <svg class="svg-arrow">
+          <use xlink:href="#svg-arrow"></use>
+        </svg>
+        <!-- /SVG ARROW -->
+      </label>
+      <button class="button medium primary">Search Now!</button>
+    </form>
+  </section>
+</div>
+<!-- /BANNER -->
