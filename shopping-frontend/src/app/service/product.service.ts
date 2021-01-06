@@ -2,20 +2,21 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Product} from '../model/Product';
+import {Globals} from '../Global/global';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private readonly API = 'http://localhost:8080/products/';
-  private readonly API_GET_BY_ID = 'http://localhost:8080/product/';
-  private readonly API2 = 'http://localhost:8080/products';
-  private readonly API3 = 'http://localhost:8080/productIndex';
-  private readonly API4 = 'http://localhost:8080/goods/';
-  private readonly API5 = 'http://localhost:8080/totalEntities';
-  private readonly API_ADD_NEW = 'http://localhost:8080/addNew';
+  private readonly API = this.global.API +'products/';
+  private readonly API_GET_BY_ID = this.global.API +'product/';
+  private readonly API2 = this.global.API +'products';
+  private readonly API3 = this.global.API +'productIndex';
+  private readonly API4 = this.global.API +'goods/';
+  private readonly API5 = this.global.API +'totalEntities';
+  private readonly API_ADD_NEW = this.global.API +'addNew';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private global: Globals) {
   }
 
   getProducts(pageNum: number, pageSize: number, priceFlow: number, productType: number, search: string[]): Observable<Product[]> {

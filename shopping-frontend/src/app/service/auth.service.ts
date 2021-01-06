@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {JwtResponse} from '../model/JwtResponse';
+import {Globals} from '../Global/global';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
@@ -13,9 +14,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-  private loginUrl = 'http://localhost:8080/login';
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient,private global: Globals) { }
   attemptAuth(account): Observable<JwtResponse>{
-    return this.http.post<JwtResponse>(this.loginUrl, account, httpOptions);
+    return this.http.post<JwtResponse>(this.global.API, account, httpOptions);
   }
 }

@@ -21,6 +21,7 @@ import {ToastrModule} from 'ngx-toastr';
 import { CartComponent } from './cart/cart.component';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
+import {Globals} from './Global/global';
 
 
 @NgModule({
@@ -52,7 +53,7 @@ import {environment} from '../environments/environment';
 
 
   ],
-  providers: [httpInterceptorProviders,LoadCssService,DatePipe],
+  providers: [httpInterceptorProviders,LoadCssService,DatePipe, Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
