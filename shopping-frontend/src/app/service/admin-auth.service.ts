@@ -20,7 +20,7 @@ export class AdminAuthService implements CanActivate{
     else if (!token ||
       tokenPayload !== expectedRole) {
       // not role admin
-      this.router.navigateByUrl('/user/');
+      this.router.navigateByUrl('/');
       confirm('You do not permission to Admin Page 403 Error !');
       return false;
     }

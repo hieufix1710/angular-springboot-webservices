@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:4200",allowedHeaders = "*")
+//@CrossOrigin(origins = "http://localhost:4200",allowedHeaders = "*")
 @RestController
 public class AccountController {
     @Autowired

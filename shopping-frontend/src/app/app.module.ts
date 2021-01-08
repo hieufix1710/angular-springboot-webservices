@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import {UserModule} from './user/user.module';
 import {AdminModule} from './admin/admin.module';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {httpInterceptorProviders} from './service/auth-interceptor.service';
@@ -22,19 +21,21 @@ import { CartComponent } from './cart/cart.component';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {Globals} from './Global/global';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
     HomeFirstComponent,
     ShopViewComponent,
     BannerComponent,
     TutorialComponent,
     RegisterComponent,
-    CartComponent
+    CartComponent,
+    ProductDetailComponent
   ],
   imports: [
     HttpClientModule,
@@ -44,12 +45,13 @@ import {Globals} from './Global/global';
     AdminModule,
     ReactiveFormsModule,
     FormsModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot({
-      positionClass: 'toast-top-center',
+      positionClass: 'toast-top-right',
+      timeOut: 1000,
       preventDuplicates: true,
     }),
-    AngularFireModule.initializeApp(environment.firebaseConfig)
-
+    AngularFireModule.initializeApp(environment.firebaseConfig),
 
 
   ],

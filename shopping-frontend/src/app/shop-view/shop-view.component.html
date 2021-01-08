@@ -1,8 +1,8 @@
 <!-- SECTION HEADLINE -->
-<div class="section-headline-wrap">
+<div class="section-headline-wrap v2" >
   <div class="section-headline">
-    <h2>Products Shop</h2>
-    <p>Home<span class="separator">/</span>Products Shop<span class="separator"></span><span class="current-section"></span></p>
+    <h2>Products</h2>
+    <p>Home<span class="separator">/</span><span class="current-section">Products</span></p>
   </div>
 </div>
 <!-- /SECTION HEADLINE -->
@@ -259,8 +259,8 @@
           <!-- /PRODUCT PREVIEW ACTIONS -->
 
           <!-- PRODUCT INFO -->
-          <div class="product-info" style="z-index: 1">
-            <a href="item-v1.html">
+          <div class="product-info"   style="z-index: 1">
+            <a [routerLink]="['/home/product-detail',product.id]">
               <p class="text-header">{{product.name}}</p>
             </a>
             <p class="product-description">Lorem ipsum dolor sit urarde...</p>
@@ -364,7 +364,7 @@
 
           <!-- PRODUCT INFO -->
           <div class="product-info">
-            <a href="item-v1.html">
+            <a [routerLink]="['/home/product-detail',product.id]">
               <p class="text-header">{{product.name}}</p>
             </a>
             <p class="product-description">Lorem ipsum dolor sit urarde...</p>
@@ -476,8 +476,8 @@
           <!-- /AUTHOR DATA REPUTATION -->
 
           <!-- ITEM ACTIONS -->
-          <div class="item-actions">
-            <a href="#" class="tooltip" title="Add to your cart">
+          <div class="item-actions" (click)="addToCart(product.id)">
+            <a href="javascript: void(0)" class="tooltip" title="Add to your cart">
               <div class="circle tiny">
                 <span class="icon-basket-loaded" style="margin-left: 10px"></span>
               </div>

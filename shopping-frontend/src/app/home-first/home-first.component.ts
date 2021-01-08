@@ -3,6 +3,8 @@ import {LoadCssService} from '../service/load-css.service';
 import {HomeFirstService} from '../service/home-first.service';
 import {Router} from '@angular/router';
 import {ProductService} from '../service/product.service';
+import {TokenStorageService} from '../service/token-storage.service';
+import {UserService} from '../service/user.service';
 
 @Component({
   selector: 'app-home-first',
@@ -12,11 +14,16 @@ import {ProductService} from '../service/product.service';
 export class HomeFirstComponent implements OnInit {
   search = '';
   cart: number[] = [];
+  imageUser: string;
+  loginUser: string;
+  username: string;
 
   constructor(private loadingService: LoadCssService,
               private homeFirstService: HomeFirstService,
               private router : Router,
               private productService: ProductService,
+              private tokenStorageService: TokenStorageService,
+              private userService: UserService,
 
   ) { }
 
@@ -39,11 +46,26 @@ export class HomeFirstComponent implements OnInit {
     }catch (e) {
       console.log(e)
     }
+    this.username = this.tokenStorageService.getUsername();
+    if (this.username!=null){
+      this.userService.getUser(this.username).subscribe(
+        (data) => {
+          this.loginUser = data.name;
+          this.imageUser = data.avatar
+        }
+      )
+    }
   }
 
 
 
   sendDataSearch() {
+
+  }
+
+  logout() {
+    this.tokenStorageService.signOut();
+    this.router.navigateByUrl('/')
 
   }
 }

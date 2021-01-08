@@ -17,6 +17,6 @@ export class AuthService {
 
   constructor(private http: HttpClient,private global: Globals) { }
   attemptAuth(account): Observable<JwtResponse>{
-    return this.http.post<JwtResponse>(this.global.API, account, httpOptions);
+    return this.http.post<JwtResponse>(this.global.API + "login", account, httpOptions);
   }
 }

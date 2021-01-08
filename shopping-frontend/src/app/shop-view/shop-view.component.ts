@@ -127,7 +127,7 @@ export class ShopViewComponent implements OnInit {
   addToCart(id: number) {
     this.cart.push(id);
     window.sessionStorage.setItem('cart', this.cart.toString());
-    this.toast.success('Manipulation success !', 'Add to cart')
+    this.toast.info('Manipulation success !', 'Add to cart')
 
   }
 

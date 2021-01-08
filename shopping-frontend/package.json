@@ -26,7 +26,7 @@
     "@angular/router": "~9.1.12",
     "firebase": "^8.2.1",
     "jquery": "^3.5.1",
-    "ngx-toastr": "^13.2.0",
+    "ngx-toastr": "^12.1.0",
     "rxjs": "~6.5.4",
     "serve-favicon": "^2.5.0",
     "simple-line-icons": "^2.5.5",

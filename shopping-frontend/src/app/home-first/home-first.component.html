@@ -29,20 +29,94 @@
     </div>
     <!-- /MOBILE ACCOUNT OPTIONS HANDLER -->
 
+
+
+
+
+
+
+
     <!-- USER BOARD -->
     <div class="user-board">
+      <!-- USER QUICKVIEW -->
+      <div class="user-quickview" *ngIf="loginUser!=null">
+        <!-- USER AVATAR -->
+        <a routerLink="/author-profile">
+          <div class="outer-ring">
+            <div class="inner-ring"></div>
+            <figure class="user-avatar">
+              <img *ngIf="imageUser!=null" [src]="imageUser" alt="avatar">
+              <img [hidden]="imageUser" src="{{imageUser}}" alt="avatar">
+            </figure>
+          </div>
+        </a>
+        <!-- /USER AVATAR -->
 
+        <!-- USER INFORMATION -->
+        <p class="user-name">{{loginUser}}</p>
+        <!-- SVG ARROW -->
+        <svg class="svg-arrow">
+          <use xlink:href="#svg-arrow"></use>
+        </svg>
+
+        <!-- /SVG ARROW -->
+        <p class="user-money">$745.00</p>
+        <!-- /USER INFORMATION -->
+
+        <!-- DROPDOWN -->
+        <ul class="dropdown small hover-effect closed">
+          <li class="dropdown-item">
+            <div class="dropdown-triangle"></div>
+            <a href="author-profile.html">Profile Page</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="dashboard-settings.html">Account Settings</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="dashboard-purchases.html">Your Purchases</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="dashboard-statement.html">Sales Statement</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="dashboard-buycredits.html">Buy Credits</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="dashboard-withdrawals.html">Withdrawals</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="dashboard-uploaditem.html">Upload Item</a>
+          </li>
+          <li class="dropdown-item">
+            <a href="dashboard-manageitems.html">Manage Items</a>
+          </li>
+        </ul>
+        <!-- /DROPDOWN -->
+      </div>
+      <!-- /USER QUICKVIEW -->
       <!-- ACCOUNT INFORMATION -->
-    </div>
-    <!-- /ACCOUNT INFORMATION -->
-    <!-- ACCOUNT ACTIONS -->
-    <div class="account-actions">
-      <a href="/register" class="button primary">Become a Seller</a>
-      <a href="/login" class="button secondary">Login</a>
-    </div>
-    <!-- /ACCOUNT ACTIONS -->
+      <div class="account-information">
+        <a routerLink="/cart">
+          <div class="account-wishlist-quickview">
+            <span class="icon-basket-loaded" *ngIf="cart.length!==0" style="font-size: 25px"></span>
+            <span class="icon-basket" *ngIf="cart.length===0" style="font-size: 25px"></span>
+          </div>
+        </a>
+      </div>
+      <!-- /ACCOUNT INFORMATION -->
 
+      <!-- ACCOUNT ACTIONS -->
+      <div class="account-actions">
+        <a href="/register" *ngIf="loginUser==null" class="button primary">Become a Seller</a>
+        <a href="/login" *ngIf="loginUser==null" class="button secondary">Login</a>
+        <a *ngIf="loginUser!=null" href="/" (click)="logout()" class="button secondary">Logout</a>
+
+      </div>
+      <!-- /ACCOUNT ACTIONS -->
+    </div>
     <!-- /USER BOARD -->
+
+
   </header>
 </div>
 <!-- /HEADER -->
@@ -71,7 +145,7 @@
   <ul class="dropdown dark hover-effect interactive">
     <!-- DROPDOWN ITEM -->
     <li class="dropdown-item">
-      <a href="index.html">Home</a>
+      <a routerLink="/">Home</a>
     </li>
     <!-- /DROPDOWN ITEM -->
 
@@ -83,277 +157,277 @@
 
     <!-- DROPDOWN ITEM -->
     <li class="dropdown-item">
-      <a routerLink="/shop">Products</a>
+      <a routerLink="shop">Products</a>
     </li>
     <!-- /DROPDOWN ITEM -->
 
     <!-- DROPDOWN ITEM -->
     <li class="dropdown-item">
-      <a href="services.html">Services</a>
+      <a href="/services">Services</a>
     </li>
     <!-- /DROPDOWN ITEM -->
 
     <!-- DROPDOWN ITEM -->
-    <li class="dropdown-item">
-      <a href="shop-gridview-v1.html">Online Goods</a>
-    </li>
+<!--    <li class="dropdown-item">-->
+<!--      <a href="shop-gridview-v1.html" >Online Goods</a>-->
+<!--    </li>-->
     <!-- /DROPDOWN ITEM -->
 
     <!-- DROPDOWN ITEM -->
-    <li class="dropdown-item interactive">
-      <a href="#">
-        Features
-        <!-- SVG ARROW -->
-        <svg class="svg-arrow">
-          <use xlink:href="#svg-arrow"></use>
-        </svg>
-        <!-- /SVG ARROW -->
-      </a>
+<!--    <li class="dropdown-item interactive" >-->
+<!--      <a href="#">-->
+<!--        Features-->
+<!--        &lt;!&ndash; SVG ARROW &ndash;&gt;-->
+<!--        <svg class="svg-arrow">-->
+<!--          <use xlink:href="#svg-arrow"></use>-->
+<!--        </svg>-->
+<!--        &lt;!&ndash; /SVG ARROW &ndash;&gt;-->
+<!--      </a>-->
 
-      <!-- INNER DROPDOWN -->
-      <ul class="inner-dropdown">
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <p>Emerald Dragon</p>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--      &lt;!&ndash; INNER DROPDOWN &ndash;&gt;-->
+<!--      <ul class="inner-dropdown">-->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <p>Emerald Dragon</p>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="index.html">Homepage V1</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="index.html">Homepage V1</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="home-v2.html">Homepage V2</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="home-v2.html">Homepage V2</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="itemview-versions.html">Item View Versions</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="itemview-versions.html">Item View Versions</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="shop-gridview-v1.html">Shop Grid View V1</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="shop-gridview-v1.html">Shop Grid View V1</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="shop-gridview-v2.html">Shop Grid View V2</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="shop-gridview-v2.html">Shop Grid View V2</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="shop-listview-v1.html">Shop List View V1</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="shop-listview-v1.html">Shop List View V1</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="shop-listview-v2.html">Shop List View V2</a>
-          <!-- PIN -->
-          <span class="pin soft-edged primary">hot</span>
-          <!-- /PIN -->
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="shop-listview-v2.html">Shop List View V2</a>-->
+<!--          &lt;!&ndash; PIN &ndash;&gt;-->
+<!--          <span class="pin soft-edged primary">hot</span>-->
+<!--          &lt;!&ndash; /PIN &ndash;&gt;-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="author-profile.html">Profile Page</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="author-profile.html">Profile Page</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="blog-v1.html">Blog Page V1</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="blog-v1.html">Blog Page V1</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="blog-v2.html">Blog Page V2</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="blog-v2.html">Blog Page V2</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="open-post.html">Open Post</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="open-post.html">Open Post</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="forum.html">Forum Board</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="forum.html">Forum Board</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="subforum.html">Subforum</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="subforum.html">Subforum</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="open-topic.html">Open Topic</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="open-topic.html">Open Topic</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="login-register.html">Login and Register</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="login-register.html">Login and Register</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="menu-dropdowns.html">Menu and Dropdowns</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="menu-dropdowns.html">Menu and Dropdowns</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <p>Product Pages</p>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <p>Product Pages</p>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="item-v1.html">Item Page V1</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="item-v1.html">Item Page V1</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="item-v2.html">Item Page V2</a>
-          <!-- PIN -->
-          <span class="pin soft-edged secondary">new</span>
-          <!-- /PIN -->
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="item-v2.html">Item Page V2</a>-->
+<!--          &lt;!&ndash; PIN &ndash;&gt;-->
+<!--          <span class="pin soft-edged secondary">new</span>-->
+<!--          &lt;!&ndash; /PIN &ndash;&gt;-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="product-page.html">Product Page</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="product-page.html">Product Page</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="auction-page.html">Auction Page</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="auction-page.html">Auction Page</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="service-page.html">Service Page</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="service-page.html">Service Page</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="favourites.html">Favourite Products Grid View</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="favourites.html">Favourite Products Grid View</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="favourites-listview.html">Favourite Products List View</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="favourites-listview.html">Favourite Products List View</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="alerts-notifications.html">Alerts &amp; Notifications</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="alerts-notifications.html">Alerts &amp; Notifications</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <p>Dashboard</p>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <p>Dashboard</p>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="dashboard-settings.html">Account Settings</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="dashboard-settings.html">Account Settings</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="dashboard-statistics.html">Statistics Page</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="dashboard-statistics.html">Statistics Page</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="dashboard-statement.html">Sales Statement</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="dashboard-statement.html">Sales Statement</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="dashboard-inbox.html">Inbox Page</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="dashboard-inbox.html">Inbox Page</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="dashboard-openmessage.html">Open Message</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="dashboard-openmessage.html">Open Message</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="dashboard-uploaditem.html">Upload Page</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="dashboard-uploaditem.html">Upload Page</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <p>Gamification</p>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <p>Gamification</p>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="community-badges.html">Author Badges Page</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="community-badges.html">Author Badges Page</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="badges.html">All Badges (Big and Small)</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="badges.html">All Badges (Big and Small)</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="flag-badges.html">Flag Badges (Big and Small)</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="flag-badges.html">Flag Badges (Big and Small)</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="badges-boxes.html">Badge Boxes Versions</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="badges-boxes.html">Badge Boxes Versions</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
 
-        <!-- INNER DROPDOWN ITEM -->
-        <li class="inner-dropdown-item">
-          <a href="author-badges.html">Public Author Badges</a>
-        </li>
-        <!-- /INNER DROPDOWN ITEM -->
-      </ul>
-      <!-- /INNER DROPDOWN -->
-    </li>
+<!--        &lt;!&ndash; INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--        <li class="inner-dropdown-item">-->
+<!--          <a href="author-badges.html">Public Author Badges</a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; /INNER DROPDOWN ITEM &ndash;&gt;-->
+<!--      </ul>-->
+<!--      &lt;!&ndash; /INNER DROPDOWN &ndash;&gt;-->
+<!--    </li>-->
     <!-- /DROPDOWN ITEM -->
   </ul>
   <!-- /DROPDOWN -->
@@ -492,309 +566,309 @@
       <ul class="main-menu">
         <!-- MENU ITEM -->
         <li class="menu-item">
-          <a href="index.html">Home</a>
+          <a href="/">Home</a>
         </li>
         <!-- /MENU ITEM -->
 
         <!-- MENU ITEM -->
         <li class="menu-item">
-          <a routerLink="tutorial">How to shop</a>
+          <a routerLink="/tutorial">How to shop</a>
         </li>
         <!-- /MENU ITEM -->
 
         <!-- MENU ITEM -->
         <li class="menu-item">
-          <a routerLink="shop">Products</a>
+          <a routerLink="/shop">Products</a>
         </li>
         <!-- /MENU ITEM -->
 
         <!-- MENU ITEM -->
         <li class="menu-item">
-          <a href="javascript: void(0)">Services</a>
+          <a href="/services">Services</a>
         </li>
         <!-- /MENU ITEM -->
 
         <!-- MENU ITEM -->
-        <li class="menu-item">
-          <a href="javascript: void(0)">Online goods</a>
-        </li>
+<!--        <li class="menu-item">-->
+<!--          <a href="javascript: void(0)">Online goods</a>-->
+<!--        </li>-->
         <!-- /MENU ITEM -->
 
         <!-- MENU ITEM -->
-        <li class="menu-item sub">
-          <a href="javascript: void(0)">
-            Features
-            <!-- SVG ARROW -->
-            <svg class="svg-arrow">
-              <use xlink:href="#svg-arrow"></use>
-            </svg>
-            <!-- /SVG ARROW -->
-          </a>
-          <div class="content-dropdown">
-            <!-- FEATURE LIST BLOCK -->
-            <div class="feature-list-block">
-              <h6 class="feature-list-title">Emerald Dragon</h6>
-              <hr class="line-separator">
-              <!-- FEATURE LIST -->
-              <ul class="feature-list">
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Homepage V1</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--        <li class="menu-item sub">-->
+<!--          <a href="javascript: void(0)">-->
+<!--            Features-->
+<!--            &lt;!&ndash; SVG ARROW &ndash;&gt;-->
+<!--            <svg class="svg-arrow">-->
+<!--              <use xlink:href="#svg-arrow"></use>-->
+<!--            </svg>-->
+<!--            &lt;!&ndash; /SVG ARROW &ndash;&gt;-->
+<!--          </a>-->
+<!--          <div class="content-dropdown">-->
+<!--            &lt;!&ndash; FEATURE LIST BLOCK &ndash;&gt;-->
+<!--            <div class="feature-list-block">-->
+<!--              <h6 class="feature-list-title">Emerald Dragon</h6>-->
+<!--              <hr class="line-separator">-->
+<!--              &lt;!&ndash; FEATURE LIST &ndash;&gt;-->
+<!--              <ul class="feature-list">-->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Homepage V1</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Homepage V2</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Homepage V2</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Item View Versions</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Item View Versions</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Shop Grid View V1</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Shop Grid View V1</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Shop Grid View V2</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Shop Grid View V2</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Shop List View V1</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Shop List View V1</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">
-                    Shop List View V2
-                    <!-- PIN -->
-                    <span class="pin primary">hot</span>
-                    <!-- /PIN -->
-                  </a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">-->
+<!--                    Shop List View V2-->
+<!--                    &lt;!&ndash; PIN &ndash;&gt;-->
+<!--                    <span class="pin primary">hot</span>-->
+<!--                    &lt;!&ndash; /PIN &ndash;&gt;-->
+<!--                  </a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Profile Page</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
-              </ul>
-              <!-- /FEATURE LIST -->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Profile Page</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
+<!--              </ul>-->
+<!--              &lt;!&ndash; /FEATURE LIST &ndash;&gt;-->
 
-              <!-- FEATURE LIST -->
-              <ul class="feature-list">
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Blog Page V1</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--              &lt;!&ndash; FEATURE LIST &ndash;&gt;-->
+<!--              <ul class="feature-list">-->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Blog Page V1</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Blog Page V2</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Blog Page V2</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Open Post</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Open Post</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Forum Board</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Forum Board</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Subforum</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Subforum</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Open Topic</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Open Topic</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Login and Register</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Login and Register</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="javascript: void(0)">Menu and Dropdowns</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
-              </ul>
-              <!-- /FEATURE LIST -->
-            </div>
-            <!-- /FEATURE LIST BLOCK -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="javascript: void(0)">Menu and Dropdowns</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
+<!--              </ul>-->
+<!--              &lt;!&ndash; /FEATURE LIST &ndash;&gt;-->
+<!--            </div>-->
+<!--            &lt;!&ndash; /FEATURE LIST BLOCK &ndash;&gt;-->
 
-            <!-- FEATURE LIST BLOCK -->
-            <div class="feature-list-block">
-              <h6 class="feature-list-title">Product Pages</h6>
-              <hr class="line-separator">
-              <!-- FEATURE LIST -->
-              <ul class="feature-list">
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="item-v1.html">Item Page V1</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--            &lt;!&ndash; FEATURE LIST BLOCK &ndash;&gt;-->
+<!--            <div class="feature-list-block">-->
+<!--              <h6 class="feature-list-title">Product Pages</h6>-->
+<!--              <hr class="line-separator">-->
+<!--              &lt;!&ndash; FEATURE LIST &ndash;&gt;-->
+<!--              <ul class="feature-list">-->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="item-v1.html">Item Page V1</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="item-v2.html">
-                    Item Page V2
-                    <!-- PIN -->
-                    <span class="pin secondary">new</span>
-                    <!-- /PIN -->
-                  </a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="item-v2.html">-->
+<!--                    Item Page V2-->
+<!--                    &lt;!&ndash; PIN &ndash;&gt;-->
+<!--                    <span class="pin secondary">new</span>-->
+<!--                    &lt;!&ndash; /PIN &ndash;&gt;-->
+<!--                  </a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="product-page.html">Product Page</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="product-page.html">Product Page</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="auction-page.html">Auction Page</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="auction-page.html">Auction Page</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="service-page.html">Service Page</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="service-page.html">Service Page</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="favourites.html">Favourite Products Grid View</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="favourites.html">Favourite Products Grid View</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="favourites-listview.html">Favourite Products List View</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="favourites-listview.html">Favourite Products List View</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="alerts-notifications.html">Alerts &amp; Notifications</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
-              </ul>
-              <!-- /FEATURE LIST -->
-            </div>
-            <!-- /FEATURE LIST BLOCK -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="alerts-notifications.html">Alerts &amp; Notifications</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
+<!--              </ul>-->
+<!--              &lt;!&ndash; /FEATURE LIST &ndash;&gt;-->
+<!--            </div>-->
+<!--            &lt;!&ndash; /FEATURE LIST BLOCK &ndash;&gt;-->
 
-            <!-- FEATURE LIST BLOCK -->
-            <div class="feature-list-block">
-              <h6 class="feature-list-title">Dashboard</h6>
-              <hr class="line-separator">
-              <!-- FEATURE LIST -->
-              <ul class="feature-list">
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="dashboard-settings.html">Account Settings</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--            &lt;!&ndash; FEATURE LIST BLOCK &ndash;&gt;-->
+<!--            <div class="feature-list-block">-->
+<!--              <h6 class="feature-list-title">Dashboard</h6>-->
+<!--              <hr class="line-separator">-->
+<!--              &lt;!&ndash; FEATURE LIST &ndash;&gt;-->
+<!--              <ul class="feature-list">-->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="dashboard-settings.html">Account Settings</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="dashboard-statistics.html">Statistics Page</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="dashboard-statistics.html">Statistics Page</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="dashboard-statement.html">Sales Statement</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="dashboard-statement.html">Sales Statement</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="dashboard-inbox.html">Inbox Page</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="dashboard-inbox.html">Inbox Page</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="dashboard-openmessage.html">Open Message</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="dashboard-openmessage.html">Open Message</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="dashboard-uploaditem.html">Upload Page</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
-              </ul>
-              <!-- /FEATURE LIST -->
-            </div>
-            <!-- /FEATURE LIST BLOCK -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="dashboard-uploaditem.html">Upload Page</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
+<!--              </ul>-->
+<!--              &lt;!&ndash; /FEATURE LIST &ndash;&gt;-->
+<!--            </div>-->
+<!--            &lt;!&ndash; /FEATURE LIST BLOCK &ndash;&gt;-->
 
-            <!-- FEATURE LIST BLOCK -->
-            <div class="feature-list-block">
-              <h6 class="feature-list-title">Gamification</h6>
-              <hr class="line-separator">
-              <!-- FEATURE LIST -->
-              <ul class="feature-list">
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="community-badges.html">Author Badges Page</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--            &lt;!&ndash; FEATURE LIST BLOCK &ndash;&gt;-->
+<!--            <div class="feature-list-block">-->
+<!--              <h6 class="feature-list-title">Gamification</h6>-->
+<!--              <hr class="line-separator">-->
+<!--              &lt;!&ndash; FEATURE LIST &ndash;&gt;-->
+<!--              <ul class="feature-list">-->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="community-badges.html">Author Badges Page</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="badges.html">All Badges (Big and Small)</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="badges.html">All Badges (Big and Small)</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="flag-badges.html">Flag Badges (Big and Small)</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="flag-badges.html">Flag Badges (Big and Small)</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="badges-boxes.html">Badge Boxes Versions</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="badges-boxes.html">Badge Boxes Versions</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
 
-                <!-- FEATURE LIST ITEM -->
-                <li class="feature-list-item">
-                  <a href="author-badges.html">Public Author Badges</a>
-                </li>
-                <!-- /FEATURE LIST ITEM -->
-              </ul>
-              <!-- /FEATURE LIST -->
-            </div>
-            <!-- /FEATURE LIST BLOCK -->
-          </div>
-        </li>
+<!--                &lt;!&ndash; FEATURE LIST ITEM &ndash;&gt;-->
+<!--                <li class="feature-list-item">-->
+<!--                  <a href="author-badges.html">Public Author Badges</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; /FEATURE LIST ITEM &ndash;&gt;-->
+<!--              </ul>-->
+<!--              &lt;!&ndash; /FEATURE LIST &ndash;&gt;-->
+<!--            </div>-->
+<!--            &lt;!&ndash; /FEATURE LIST BLOCK &ndash;&gt;-->
+<!--          </div>-->
+<!--        </li>-->
         <!-- /MENU ITEM -->
       </ul>
     </nav>

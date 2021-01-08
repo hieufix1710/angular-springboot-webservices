@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {LoadCssService} from '../../service/load-css.service';
+import {Product} from '../model/Product';
+import {LoadCssService} from '../service/load-css.service';
 import {ActivatedRoute, ParamMap} from '@angular/router';
-import {ProductService} from '../../service/product.service';
-import {Product} from '../../model/Product';
+import {ProductService} from '../service/product.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -32,5 +32,4 @@ export class ProductDetailComponent implements OnInit {
     )
 
   }
-
 }

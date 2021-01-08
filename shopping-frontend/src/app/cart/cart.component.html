@@ -74,13 +74,10 @@
             <p class="text-header small">Product Details</p>
           </div>
           <div class="cart-header-category">
-            <p class="text-header small">Category</p>
+            <p class="text-header small">Quantity</p>
           </div>
           <div class="cart-header-price">
             <p class="text-header small">Price</p>
-          </div>
-          <div class="cart-header-price">
-            <p class="text-header small">Quantity</p>
           </div>
           <div class="cart-header-actions">
             <p class="text-header small">Remove</p>
@@ -89,14 +86,14 @@
         <!-- /CART HEADER -->
 
         <!-- CART ITEM -->
-        <div class="cart-item" *ngFor="let product of cart">
+        <div class="cart-item" *ngFor="let cart of carts">
           <!-- CART ITEM PRODUCT -->
           <div class="cart-item-product">
             <!-- ITEM PREVIEW -->
             <div class="item-preview">
               <a href="item-v1.html">
                 <figure class="product-preview-image small liquid">
-                  <img src="{{product.url}}" alt="">
+                  <img src="{{cart.product.url}}" alt="">
                 </figure>
               </a>
               <a href="item-v1.html"><p class="text-header small">Westeros Custom Clothing</p></a>
@@ -108,20 +105,20 @@
 
           <!-- CART ITEM CATEGORY -->
           <div class="cart-item-category">
-            <a href="shop-gridview-v1.html" class="category primary">{{product.typeProduct.name}}</a>
+            <a href="shop-gridview-v1.html" class="category primary">{{cart.quantity}}</a>
           </div>
           <!-- /CART ITEM CATEGORY -->
 
           <!-- CART ITEM PRICE -->
           <div class="cart-item-price">
-            <p class="price"><span>$</span>{{product.price}}</p>
+            <p class="price"><span>$</span>{{cart.product.price}}</p>
           </div>
           <!-- /CART ITEM PRICE -->
 
 
           <!-- CART ITEM ACTIONS -->
-          <div class="cart-item-actions" (click)="removeFromCart(product.id)">
-            <a href="#" class="button dark-light rmv">
+          <div class="cart-item-actions">
+            <a href="javascript:void(0)" (click)="removeFromCart(cart)" class="button dark-light rmv">
               <!-- SVG PLUS -->
               <svg class="svg-plus">
                 <use xlink:href="#svg-plus"></use>

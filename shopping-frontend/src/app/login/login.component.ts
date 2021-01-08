@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   roles: string;
   constructor(private fb: FormBuilder, private authService: AuthService,
               private tokenStorageService: TokenStorageService,
-              private router: Router
+              private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
               this.tokenStorageService.saveUsername(jwtResponse.username);
               this.tokenStorageService.saveAuthorities(jwtResponse.authorities);
               this.roles = this.tokenStorageService.getAuthorities();
+
                this.router.navigateByUrl('/')
             }
       },error => console.log('Fail to login')
